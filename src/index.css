@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bhoop-bg: #000000;
+  --color-bhoop-surface: #0D0D0D;
+  --color-bhoop-surface-elevated: #1A1A1A;
+  --color-bhoop-surface-mid: #161B19;
+  --color-bhoop-surface-border: #2C2C2C;
+
+  --color-bhoop-critical: #FF3B30;
+  --color-bhoop-warning: #FFD60A;
+  --color-bhoop-healthy: #30D158;
+
+  --color-bhoop-badge-healthy: #0D2E1A;
+  --color-bhoop-badge-warning: #2E2400;
+  --color-bhoop-badge-critical: #2E0D0A;
+
+  --color-bhoop-ring-collection: #0A84FF;
+  --color-bhoop-ring-breakeven: #BF5AF2;
+
+  --color-bhoop-bhai-accent: #00E5C3;
+  --color-bhoop-insight-accent: #0A84FF;
+
+  --color-bhoop-text-primary: #FFFFFF;
+  --color-bhoop-text-secondary: #A0A0A0;
+  --color-bhoop-text-muted: #555555;
+
+  --animate-ping-slow: ping-slow 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+  @keyframes ping-slow {
+    75%, 100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+}
+
+body {
+  background-color: var(--color-bhoop-bg);
+  color: var(--color-bhoop-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
